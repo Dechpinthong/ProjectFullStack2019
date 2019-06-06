@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Book</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>ISBN_10</th>
+                <th>Author</th>
+                <th>Binding</th>
+                <th>Year</th>
+                <th>Publisher</th>
+            </tr>
+        </thead>
+    <tbody>
+        {% for item in items %}
+            <tr>
+                <td>
+                    <a href="{% url 'edit_item' pk=item.id %}">
+                        {{ item.title }}
+                    </a>
+                </td>
+                <td>{{ item.isbn }}</td>
+                <td>{{ item.author }}</td>
+                <td>{{ item.binding }}</td>
+                <td>{{ item.year }}</td>
+                <td>{{ item.publisher }}</td>
+                <td>
+                        <a href="{% url 'sell_item' pk=item.id %}">Borrow
+                        </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

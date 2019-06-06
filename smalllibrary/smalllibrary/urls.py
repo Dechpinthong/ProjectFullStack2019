@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from dechlib.views import home, list_book, list_borrower, list_publisher, list_binding
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('example/', include('example_app.urls', namespace='example_app')),
+    path('', home, name='home'),
+    path('listbook/', list_book, name='list_book'),
+    path('borrower/', list_borrower, name='list_borrower'),
+    path('publisher/', list_publisher, name='list_publisher'),
+    path('binding/', list_binding, name='list_binding'),
 ]
