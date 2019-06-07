@@ -7,6 +7,11 @@
     <title>List Book</title>
 </head>
 <body>
+    <div>
+        <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" data-src="{% static "images/Book.jpg" %}" uk-img>
+            <p class="uk-h4 uk-text-success uk-text-bold uk-text-large" style="font-family: 'Dosis', sans-serif;">List Book in Library</p>
+        </div>
+    </div>
     <table>
         <thead>
             <tr>
@@ -39,6 +44,12 @@
         {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'home1' %}">Go Home Mother Fucker</a>
+<div>
+    <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle">
+        <div class="uk-text-left">
+            <a href="{% url 'home1' %}">Go Home Mother Fucker</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
