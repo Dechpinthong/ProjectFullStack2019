@@ -18,50 +18,22 @@
 </head>
 
 <body>
-    <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="#">Active</a></li>
-                <li>
-                    <a href="#">Parent</a>
-                    <div class="uk-navbar-dropdown">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">First</a></li>
-                            <li class="uk-nav-header">Header</li>
-                            <li><a href="#">First</a></li>
-                            <li><a href="#">Second</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">Third</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Item</a></li>
-            </ul>
-            <div class="uk-margin">
-                <form class="uk-search uk-search-default">
-                    <a href="" class="uk-search-icon-flip" uk-search-icon></a>
-                    <input class="uk-search-input" type="search" placeholder="Search...">
-                </form>
-            </div>
-        </div>
-    </nav>
             <p class="uk-h4 uk-text-success uk-text-bold uk-text-large" style="font-family: 'Dosis', sans-serif;">
                 {{ dechy }}
             </p>
             {% if user.is_anonymous %}
-                <a href="{% url 'social:begin' 'tu' %}">Log in</a>
+            <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-right"> 
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a href="{% url 'social:begin' 'tu' %}">Log in</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             {% else %}
-                <nav class="uk-navbar-container" uk-navbar>
-                    <div class="uk-navbar-right"> 
-                        <ul class="uk-navbar-nav">
-                            <li>
-                                <a href="{% url 'list_book' %}">Go to List Book page</a><br>
-                                <a href="{% url 'logoutdech' %}">Log out</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                <a href="{% url 'list_book' %}">Go to List Book page</a><br>
+                <a href="{% url 'logoutdech' %}">Log out</a>
             {% endif %}
 </body>
 </html>
