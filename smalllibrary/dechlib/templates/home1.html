@@ -79,17 +79,7 @@
 
         </div>
     </div>
-    <html>
-    <body>
-        <p>{{ dechy }}</p>
-        {% if user.is_anonymous %}
-            <a href="{% url 'login' %}">Log in</a>
-        {% else %}
-            <a href="{% url 'list_book' %}">Go to List Book page</a><br>
-            <a href="{% url 'logoutdech' %}">Log out</a>
-        {% endif %}
-    </body>
-</html>
+
 
 </body>
 </html>

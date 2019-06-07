@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from dechlib.models import Book, Transaction, Binding, Publisher
+from dechlib.models import Name, Book, Transaction, Binding, Publisher
 # from .forms import ItemForm
 
 
@@ -26,9 +26,9 @@ def logoutdech(request):
 
 
 def list_book(request):
-    items = Item.objects.all().order_by('category')
+    books = Book.objects.all().order_by('name')
     context = dict()
-    context['items'] = items
+    context['books'] = books
     return render(request, 'listbook.html', context)
 
 def list_borrower(request):
