@@ -18,10 +18,10 @@
 </head>
 
 <body>
-            <p class="uk-h4 uk-text-success uk-text-bold uk-text-large" style="font-family: 'Dosis', sans-serif;">
-                {{ dechy }}
-            </p>
-            {% if user.is_anonymous %}
+    <p class="uk-h4 uk-text-success uk-text-bold uk-text-large" style="font-family: 'Dosis', sans-serif;">
+        {{ dechy }}
+    </p>
+        {% if user.is_anonymous %}
             <nav class="uk-navbar-container" uk-navbar>
                 <div class="uk-navbar-right"> 
                     <ul class="uk-navbar-nav">
@@ -31,9 +31,23 @@
                     </ul>
                 </div>
             </nav>
-            {% else %}
-                <a href="{% url 'list_book' %}">Go to List Book page</a><br>
-                <a href="{% url 'logoutdech' %}">Log out</a>
-            {% endif %}
+        {% else %}
+            <div class="uk-section uk-section-primary uk-preserve-color">
+                <div class="uk-container">
+                    <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <a href="{% url 'list_book' %}">Go to List Book page</a><br>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <a href="{% url 'logoutdech' %}">Log out</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
 </body>
 </html>
