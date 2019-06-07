@@ -21,8 +21,7 @@ app_name = 'dechlib'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('oauth/', include('social_django.urls', namespace='social')),
-    path('example/', include('example_app.urls', namespace='example_app')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', home1, name='home1'),
     path('dech_page/', dech_page, name='dech_page'),
     path('logout/', logoutdech, name='logoutdech'),

@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
 
-<title>Bakery House</title>
+<title>THE LIBRARY</title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
                 <div class="uk-navbar-left"> 
                     <ul class="uk-navbar-nav">
                         <li>
-                            <a href="{% url 'social:begin' 'tu' %}">Log in</a>
+                            <a href="{% url 'login' %}">Log in</a>
                         </li>
                     </ul>
                 </div>
@@ -76,5 +76,20 @@
                 </div>
             </nav>
         {% endif %}
+
+        </div>
+    </div>
+    <html>
+    <body>
+        <p>{{ dechy }}</p>
+        {% if user.is_anonymous %}
+            <a href="{% url 'login' %}">Log in</a>
+        {% else %}
+            <a href="{% url 'list_book' %}">Go to List Book page</a><br>
+            <a href="{% url 'logoutdech' %}">Log out</a>
+        {% endif %}
+    </body>
+</html>
+
 </body>
 </html>

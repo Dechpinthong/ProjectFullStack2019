@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from dechlib.models import Name, Book, Transaction
+from dechlib.models import Book, Transaction, Binding, Publisher
 # from .forms import ItemForm
 
 
@@ -25,19 +25,10 @@ def logoutdech(request):
     return redirect('home1')
 
 
-# def home(request):
-   # return render(request,'home.html')
-   # context = dict()
-
-   #  if request.user.is_authenticated:
-   #      context['dechy'] = 'Welcome Fuck {}'.format(request.user)
-   #  else:
-   #      context['dechy'] = 'Welcome Fuck ass'
-
-   #  return render(request, 'home.html', context)
-
 def list_book(request):
+    items = Item.objects.all().order_by('category')
     context = dict()
+    context['items'] = items
     return render(request, 'listbook.html', context)
 
 def list_borrower(request):
