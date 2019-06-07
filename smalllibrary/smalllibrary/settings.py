@@ -59,7 +59,7 @@ ROOT_URLCONF = 'smalllibrary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,8 +95,8 @@ SOCIAL_AUTH_PIPELINE = [
 SOCIAL_AUTH_TU_KEY = 'MUOuIuUl4GneTP4DgpSKftFaYjSQGvScKqYNQ42S'
 SOCIAL_AUTH_TU_SECRET = 'jWJuFTWEvs3gIKOxw0izPgtMvwFbLmhthyTyK3XjDuGiJWFQ47RCiHga3ip99Bdm44JiHRNCPyrL9Bzp0BlvUNKUmcJtRsRKcABUC8k1gW0Gff7xUQngGDOVutyyzFE8'
 
-LOGIN_URL = '/oauth/login/tu/'
-LOGIN_REDIRECT_URL = '/example/'
+# LOGIN_URL = '/oauth/login/tu/'
+LOGIN_REDIRECT_URL = '/home1/'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

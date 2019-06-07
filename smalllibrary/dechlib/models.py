@@ -4,11 +4,11 @@ from django.db import models
 # http://docs.djangoproject.com/en/2.2/ref/models/fields/
 
 # Create your models here.
-class Name(models.Model):
-    title = models.CharField(max_length=255)
+class Users(models.Model):
+    users = models.PositiveIntegerField()
 
     def __str__(self):
-        return self.title
+        return self.users
 
 class Binding(models.Model):
     title = models.CharField(max_length=255)
@@ -35,6 +35,7 @@ class Book(models.Model):
 
 class Transaction(models.Model):
     title = models.CharField(max_length=255)
+    users = models.PositiveIntegerField()
     created = models.DateTimeField(auto_now_add = True)
 
     def __str__(self):

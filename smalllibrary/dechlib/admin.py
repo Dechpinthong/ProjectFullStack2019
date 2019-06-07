@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book#, Borrow, Publisher, Binding, Transaction
+from .models import Book, Transaction#, Borrow, Publisher, Binding
 
 # Register your models here.
 
@@ -22,7 +22,7 @@ class BookAdmin(admin.ModelAdmin):
 # class BorrowAdmin(admin.ModelAdmin):
 #     list_display = [f.name for f in Borrow._meta.fields]
 
-# @admin.register(Transaction)
-# class TransactionAdmin(admin.ModelAdmin):
-#     list_display = [f.name for f in Transaction._meta.fields]
-#     # readonly_fields = [f.name for f in Transaction._meta.fields]
+@admin.register(Transaction)
+class TransactionAdmin(admin.ModelAdmin):
+    list_display = [f.name for f in Transaction._meta.fields]
+     # readonly_fields = [f.name for f in Transaction._meta.fields]
