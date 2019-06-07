@@ -54,7 +54,7 @@
             {% if user.is_anonymous %}
                 <a href="{% url 'social:begin' 'tu' %}">Log in</a>
             {% else %}
-                <nav>
+                <nav class="uk-navbar-container" uk-navbar>
                     <div class="uk-navbar-right"> 
                         <ul class="uk-navbar-nav">
                             <li>
