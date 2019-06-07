@@ -4,7 +4,7 @@
         {% if user.is_anonymous %}
             <a href="{% url 'social:begin' 'tu' %}">Log in</a>
         {% else %}
-            <a href="{% url 'list_book' %}">Go to List Book page</a>
+            <a href="{% url 'list_book' %}">Go to List Book page</a><br>
             <a href="{% url 'logoutdech' %}">Log out</a>
         {% endif %}
     </body>
