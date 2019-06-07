@@ -26,7 +26,7 @@ def logoutdech(request):
 
 
 def list_book(request):
-    books = Book.objects.all().order_by('name')
+    books = Book.objects.all().order_by('title')
     context = dict()
     context['books'] = books
     return render(request, 'listbook.html', context)

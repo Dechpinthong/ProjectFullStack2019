@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Transaction#, Borrow, Publisher, Binding
+from .models import Book, Transaction, Publisher, Binding
 
 # Register your models here.
 
@@ -14,13 +14,13 @@ class BookAdmin(admin.ModelAdmin):
 # class BorrowAdmin(admin.ModelAdmin):
 #     list_display = [f.name for f in Borrow._meta.fields]
 
-# @admin.register(Publisher)
-# class BorrowAdmin(admin.ModelAdmin):
-#     list_display = [f.name for f in Borrow._meta.fields]
+@admin.register(Publisher)
+class PublisherAdmin(admin.ModelAdmin):
+    list_display = [f.name for f in Publisher._meta.fields]
 
-# @admin.register(Binding)
-# class BorrowAdmin(admin.ModelAdmin):
-#     list_display = [f.name for f in Borrow._meta.fields]
+@admin.register(Binding)
+class BindingAdmin(admin.ModelAdmin):
+    list_display = [f.name for f in Binding._meta.fields]
 
 @admin.register(Transaction)
 class TransactionAdmin(admin.ModelAdmin):

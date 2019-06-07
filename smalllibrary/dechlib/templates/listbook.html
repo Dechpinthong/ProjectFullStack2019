@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>List Book</title>
+    <title>List Book</title>{% load static %}
 </head>
 <body>
+    
     <div>
-        <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" data-src="{% static "images/Book.jpg" %}" uk-img>
+        <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" data-src="{% static 'images/Book.jpg' %}" uk-img>
             <p class="uk-h4 uk-text-success uk-text-bold uk-text-large" style="font-family: 'Dosis', sans-serif;">List Book in Library</p>
         </div>
     </div>
@@ -26,20 +27,12 @@
     <tbody>
         {% for book in books %}
             <tr>
-                <td>
-                    <a href="{% url 'edit_item' pk=item.id %}">
-                        {{ item.title }}
-                    </a>
-                </td>
+                <td>{{ book.title }}</td>
                 <td>{{ book.isbn }}</td>
                 <td>{{ book.author }}</td>
                 <td>{{ book.binding }}</td>
                 <td>{{ book.year }}</td>
                 <td>{{ book.publisher }}</td>
-                <td>
-                        <a href="{% url 'sell_item' pk=item.id %}">Borrow
-                        </a>
-                </td>
             </tr>
         {% endfor %}
     </tbody>
