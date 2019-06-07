@@ -19,18 +19,18 @@
             </tr>
         </thead>
     <tbody>
-        {% for item in items %}
+        {% for book in books %}
             <tr>
                 <td>
                     <a href="{% url 'edit_item' pk=item.id %}">
                         {{ item.title }}
                     </a>
                 </td>
-                <td>{{ item.isbn }}</td>
-                <td>{{ item.author }}</td>
-                <td>{{ item.binding }}</td>
-                <td>{{ item.year }}</td>
-                <td>{{ item.publisher }}</td>
+                <td>{{ book.isbn }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.binding }}</td>
+                <td>{{ book.year }}</td>
+                <td>{{ book.publisher }}</td>
                 <td>
                         <a href="{% url 'sell_item' pk=item.id %}">Borrow
                         </a>
