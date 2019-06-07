@@ -1,9 +1,40 @@
-from django.shortcuts import render
-from .models import Name, Book, Transaction
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from dechlib.models import Name, Book, Transaction
 # from .forms import ItemForm
 
-def home(request):
-   return render(request,'index.html')
+
+@login_required
+def dech_page(request):
+    return render(request, 'listbook.html')
+
+def home1(request):
+      context = dict()
+
+      if request.user.is_authenticated:
+        context['dechy'] = 'Welcome Fuck {}'.format(request.user)
+      else:
+        context['dechy'] = 'Welcome Fuck ass'
+
+      return render(request, 'home1.html', context)
+
+@login_required
+def logoutdech(request):
+    logout(request)
+    return redirect('home1')
+
+
+# def home(request):
+   # return render(request,'home.html')
+   # context = dict()
+
+   #  if request.user.is_authenticated:
+   #      context['dechy'] = 'Welcome Fuck {}'.format(request.user)
+   #  else:
+   #      context['dechy'] = 'Welcome Fuck ass'
+
+   #  return render(request, 'home.html', context)
 
 def list_book(request):
     context = dict()
