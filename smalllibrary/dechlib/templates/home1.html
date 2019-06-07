@@ -52,18 +52,18 @@
                 {{ dechy }}
             </p>
             {% if user.is_anonymous %}
+                <a href="{% url 'social:begin' 'tu' %}">Log in</a>
+            {% else %}
                 <nav>
                     <div class="uk-navbar-right"> 
                         <ul class="uk-navbar-nav">
                             <li>
-                                <a href="{% url 'social:begin' 'tu' %}">Log in</a>
+                                <a href="{% url 'list_book' %}">Go to List Book page</a><br>
+                                <a href="{% url 'logoutdech' %}">Log out</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
-            {% else %}
-                <a href="{% url 'list_book' %}">Go to List Book page</a><br>
-                <a href="{% url 'logoutdech' %}">Log out</a>
             {% endif %}
         </div>
     </div>
