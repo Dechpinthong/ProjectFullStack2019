@@ -23,7 +23,7 @@
     </p>
         {% if user.is_anonymous %}
             <nav class="uk-navbar-container" uk-navbar>
-                <div class="uk-navbar-right"> 
+                <div class="uk-navbar-left"> 
                     <ul class="uk-navbar-nav">
                         <li>
                             <a href="{% url 'social:begin' 'tu' %}">Log in</a>
@@ -34,20 +34,39 @@
         {% else %}
             <div class="uk-section uk-section-primary uk-preserve-color">
                 <div class="uk-container">
-                    <div class="uk-grid-match uk-child-width-expand@m" uk-grid>
+                    <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
                             <div>
                                 <div class="uk-card uk-card-default uk-card-body">
-                                    <a href="{% url 'list_book' %}">Go to List Book page</a><br>
+                                    <a href="{% url 'list_book' %}">List Book</a><br>
                                 </div>
                             </div>
                             <div>
                                 <div class="uk-card uk-card-default uk-card-body">
-                                    <a href="{% url 'logoutdech' %}">Log out</a>
+                                    <a href="{% url 'list_borrower' %}">Borrower</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <a href="{% url 'list_publisher' %}">Publisher</a><br>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <a href="{% url 'list_binding' %}">Binding</a>
                                 </div>
                             </div>
                     </div>
                 </div>
             </div>
+            <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-right"> 
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a href="{% url 'logoutdech' %}">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         {% endif %}
 </body>
 </html>
